@@ -10,4 +10,9 @@ int main(){
         n/=10;
     }
     cout<<count;
+<<<<<<< HEAD
 }
+=======
+    return 0;
+}
+>>>>>>> 8497b6d (1st commit)
