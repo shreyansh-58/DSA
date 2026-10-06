@@ -11,7 +11,7 @@ int revNum(int num) {
 }
 
 int main() {
-    int val = 423240643;
+    int val = 42324064;
     cout << revNum(val) << endl;
     return 0;
 }
