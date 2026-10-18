@@ -5,7 +5,7 @@ public:
         int p1=1;
         while(p1<nums.size()){
             if(nums[p1]==nums[p1-1]) count++;
-            p1=p1+1;
+            p1++;
         }
         return count;
     }
