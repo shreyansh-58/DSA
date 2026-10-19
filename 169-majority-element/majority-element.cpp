@@ -6,8 +6,9 @@ public:
         for(int i=0;i<nums.size();i++){
             if(freq==0){
                 ans=nums[i];
+                freq=1;
             }
-            if(ans==nums[i]) freq++;
+            else if(ans==nums[i]) freq++;
             else freq--;
         }
         return ans;
