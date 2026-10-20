@@ -1,16 +1,22 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        vector<bool> ans(n,1);
-        int count=0;
-        for(int i=2;i*i<n;i++){
-            for(int j=i*i;j<n;j+=i){
-                ans[j]=false;
+        if (n < 3) return 0;
+        vector<bool> isPrime(n, true);
+        isPrime[0] = isPrime[1] = false;
+
+        for (long long i = 2; i * i < n; i++) {
+            if (isPrime[i]) {
+                for (long long j = i * i; j < n; j += i) {
+                    isPrime[j] = false;
+                }
             }
         }
-        for(int i=2;i<n;i++){
-            if(ans[i]) count++;
+
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (isPrime[i]) count++;
         }
-    return count;
+        return count;
     }
 };
