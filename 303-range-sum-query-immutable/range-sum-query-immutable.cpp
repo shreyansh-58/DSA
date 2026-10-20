@@ -1,19 +1,16 @@
 class NumArray {
+    std::vector<int> nums;
 public:
-    vector<int> prefix;
     NumArray(vector<int>& nums) {
-        int sum=0;
-        for(int i=0;i<nums.size();i++){
-            sum+=nums[i];
-            prefix.push_back(sum);
-        }
-
-
+        this->nums=std::move(nums);
     }
-    
     int sumRange(int left, int right) {
-        if(left==0) return prefix[right];
-        else return prefix[right]-prefix[left-1];
+        int sum=0;
+        while(left<=right){
+            sum+=nums[left];
+            left++;
+        }
+        return sum;
     }
 };
 
